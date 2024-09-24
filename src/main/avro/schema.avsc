@@ -1,0 +1,27 @@
+{
+  "namespace": "org.synclab.avro.data",
+   "type": "record",
+   "name": "Application",
+   "fields": [
+       {"name": "name", "type": "string"},
+       {"name": "category", "type": "string"},
+       {"name": "rating", "type": ["float", "null"]},
+       {"name": "reviews", "type": "int"},
+       {"name": "size_in_kilobytes", "type": ["int", "string"]},
+       {"name": "installs_approx", "type": "long"},
+       {
+         "name": "type",
+         "type": {
+           "type": "enum",
+           "name": "ApplicationType",
+           "symbols": [
+             "UNKNOWN",
+             "FREE",
+             "PAID"
+           ],
+           "default": "FREE"
+         }
+       },
+       {"name": "price", "type": "float"}
+   ]
+}
